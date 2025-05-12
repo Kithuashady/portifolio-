@@ -1,0 +1,233 @@
+/* --- Base Styles --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A common, readable font */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Slightly softer background */
+    color: #333;
+    line-height: 1.6; /* Improves readability */
+}
+
+header {
+    background-color: #282828; /* Darker header */
+    color: #eee; /* Lighter text on dark */
+    padding: 1.2em 0; /* Slightly different padding */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; /* Center the nav */
+    text-align: center;
+    max-width: 960px; /* Consistent max-width */
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1.3em; /* Adjusted spacing */
+}
+
+nav ul li a {
+    color: #ddd; /* Slightly different link color */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+nav ul li a:hover {
+    color: #f0f0f0; /* Lighter hover color */
+}
+
+main {
+    padding: 25px; /* Adjusted padding */
+}
+
+section {
+    margin-bottom: 35px; /* Slightly more space between sections */
+    background-color: #fff;
+    padding: 25px; /* Consistent padding */
+    border-radius: 6px; /* Slightly less rounded */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* Softer shadow */
+}
+
+footer {
+    text-align: center;
+    padding: 1.5em 0; /* Adjusted padding */
+    background-color: #282828; /* Consistent dark background */
+    color: #eee;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+/* --- About Me Section Styles --- */
+.intro-section {
+    padding-top: 2.2rem; /* Slightly tweaked */
+    padding-bottom: 2.2rem;
+}
+
+.profile-card {
+    max-width: 600px; /* More specific width for the card */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.profile-pic {
+    border-radius: 50%; /* Classic circle */
+    width: 90px; /* Slightly different size */
+    height: 90px;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.2rem; /* Adjusted margin */
+    display: block; /* To control margin auto */
+}
+
+.name-title {
+    font-size: 1.8rem; /* Slightly different size */
+    font-weight: bold;
+    margin-bottom: 0.6rem; /* Adjusted margin */
+    color: #444; /* Slightly different color */
+}
+
+.elevator-pitch {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 0.8rem; /* Adjusted margin */
+}
+
+.aspirations {
+    color: #666;
+    margin-top: 0.6rem; /* Adjusted margin */
+    line-height: 1.7;
+}
+
+.social-links {
+    margin-top: 1.2rem; /* Adjusted margin */
+}
+
+.link {
+    color: #3b82f6; /* Kept blue but could be changed */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out; /* Different transition */
+}
+
+.link:hover {
+    text-decoration: underline;
+    color: #2962ff; /* Slightly darker hover blue */
+}
+
+.with-icon {
+    display: inline-flex; /* For aligning icon and text */
+    align-items: center;
+}
+
+.right-margin-small {
+    margin-right: 0.6em;
+}
+
+.top-margin {
+    margin-top: 1em;
+}
+
+.top-margin-small {
+    margin-top: 0.4em;
+}
+
+.bottom-margin {
+    margin-bottom: 1em;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.small {
+    width: 72px; /* Adjusted size */
+    height: 72px;
+}
+
+/* --- Navigation Styles --- */
+.main-header nav {
+    margin-top: 0.8em;
+}
+
+.main-header nav ul {
+    max-width: 800px; /* Adjust as needed */
+}
+
+.main-header nav ul li {
+    margin: 0 1em;
+}
+
+.main-header nav ul li a {
+    color: #ddd;
+    font-weight: normal;
+}
+
+.main-header nav ul li a:hover {
+    color: #fff;
+}
+
+/* --- Skills Section Styles --- */
+.skills-section h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: #444;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+}
+
+.skills-list li {
+    background-color: #e0e0e0;
+    color: #555;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+}
+
+/* --- Resume Section Styles --- */
+.resume-section h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: #444;
+}
+
+.resume-link {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.resume-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Contact Section Styles --- */
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: #444;
+}
+
+.contact-section p {
+    text-align: center;
+    margin-bottom: 1em;
+    color: #555;
+}
+
+.contact-link {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
