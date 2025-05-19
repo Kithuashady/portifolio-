@@ -3,570 +3,358 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShaddieTech - Web Developer Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://imagekit.io/tools/asset-public-link/?detail=%7B%22name%22%3A%22m2.jpg%22%2C%22type%22%3A%22image%2Fjpeg%22%2C%22signedurl_expire%22%3A%222028-05-12T09%3A46%3A02.016Z%22%2C%22signedUrl%22%3A%22https%3A%2F%2Fmedia-hosting.imagekit.io%2F069f2033d7a742a5%2Fm2.jpg%3FExpires%3D1841737562%26Key-Pair-Id%3DK2ZIVPTIP2VGHC%26Signature%3Dd78pRk4mMIyUzAJLpM5ALSPl1otRXEcKtZWYQ5hwWwdrSZzkoxqkRgXDyXxjICht8Zd8D9xjPmoABbTgmS2frVDiILA6v38kSgUiHgS5jpBb28YO9YxWC3SPEi8TYX-VULDm7CVvPMo-ESNRtEPloQf6CRyBH7r6btlBt-JSsh3QVVl-AD0hUKZg0DqeUsw2PUIr64Q97riri-DNYPezBfAqT6kxAFPRNWK-xzaEVCKvZqERjN2Y8TF8CpHWq62WWv9gtJrzukGpB0tM8SmKBQVwk9vmPfxRJj898ONuXdb1epB9bI1z5DbYd5Plq698KLux4mfSlIcmYhv2WMESDg__%22%7D"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Song Search & Download</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" xintegrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /* Integrated styles for the intro section */
-        .intro-overlay {
-            background-color: #f0f4c3;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            opacity: 1;
-            transition: opacity 1s ease-out;
-        }
-
-        .intro-content {
-            background-color: #fff;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .intro-profile-picture {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #aed581;
-            margin-bottom: 1.5rem;
-            animation: pulse 2s infinite alternate;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.05); }
-        }
-
-        .typing-container {
-            position: relative;
-            margin-top: 1rem;
-        }
-
-        .intro-typing-animation {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #558b2f;
-            overflow: hidden;
-            white-space: nowrap;
-            margin: 0;
-            padding-right: 15px;
-        }
-
-        .typing-cursor {
-            display: inline-block;
-            background-color: #558b2f;
-            width: 5px;
-            animation: blink-caret 0.75s step-end infinite;
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #558b2f; }
-        }
-
-        .typing-pen {
-            position: absolute;
-            right: -20px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
-            background-color: #f1c40f;
-            border-radius: 5px;
-        }
-
-        .typing-pen::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: 5px;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-bottom: 5px solid #333;
-        }
-
-        /* Your existing styles */
         body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.7;
-            scroll-behavior: smooth;
+            font-family: 'Inter', sans-serif;
         }
-
-        .main-header {
-            background-color: #34495e;
-            color: #ecf0f1;
-            padding: 1.2rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-            position: sticky;
-            top: 0;
-            z-index: 999;
-        }
-
-        .main-header h1 {
-            margin: 0;
-            font-size: 2.2rem;
-            font-weight: 600;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 1.8rem;
-        }
-
-        nav ul li a {
-            color: #ecf0f1;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease-in-out;
-        }
-
-        nav ul li a:hover {
-            color: #f1c40f;
-        }
-
-        main {
-            padding: 2.5rem;
-            margin-top: 100vh;
-        }
-
-        section {
-            background-color: #fff;
-            padding: 3.5rem;
-            margin-bottom: 2.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-        }
-
-        section h2 {
-            color: #34495e;
-            border-bottom: 4px solid #f1c40f;
-            padding-bottom: 0.7rem;
-            margin-bottom: 2rem;
-            font-size: 2.8rem;
-            text-align: center;
-        }
-
-        .intro-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 5rem 2rem;
-            background-size: cover;
-            background-position: center;
-            border-radius: 12px;
-        }
-
-        .profile-card {
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .profile-pic {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 6px solid #f1c40f;
-            margin-bottom: 1.2rem;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .profile-pic:hover {
-            transform: scale(1.05);
-        }
-
-        .name-title {
-            font-size: 3rem;
-            color: #34495e;
-            margin-bottom: 0.7rem;
-            font-weight: 700;
-        }
-
-        .elevator-pitch {
-            font-size: 1.3rem;
-            color: #555;
-            margin-bottom: 1.2rem;
-            line-height: 1.8;
-        }
-
-        .aspirations, .vision {
-            color: #777;
-            font-style: italic;
-            margin-top: 1rem;
-        }
-
-        .social-links {
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #34495e;
-            color: #fff;
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            text-decoration: none;
-            margin: 0 0.6rem;
-            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-
-        .social-links a:hover {
-            background-color: #f1c40f;
-            transform: scale(1.1);
-        }
-
-        .social-links a i {
-            font-size: 1.4rem;
-        }
-
-        .projects-section h2,
-        .skills-section h2,
-        .services-section h2,
-        .Resume-section h2,
-        .contact-section h2 {
-        }
-
-        .skills-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.2rem;
-            justify-content: center;
-            margin-top: 1.5rem;
-        }
-
-        .skills-list li {
-            background-color: #e0e0e0;
-            color: #333;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            font-weight: 500;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
-            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-
-        .skills-list li:hover {
-            background-color: #f1c40f;
-            color: #fff;
-            transform: translateY(-2px);
+        /* Style for the upload button */
+        #upload-form input[type="file"] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
             cursor: pointer;
         }
 
-        .resume-section p {
-            text-align: center;
-            font-size: 1.2rem;
-            margin-top: 1rem;
-        }
-
-        .resume-link {
-            color: #f1c40f;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .resume-link:hover {
-            color: #d4ac0d;
-        }
-
-        .contact-section {
-            text-align: center;
-        }
-
-        .contact-section p {
-            margin-bottom: 1.2rem;
-            font-size: 1.2rem;
-        }
-
-        .contact-link {
-            color: #34495e;
-            font-weight: bold;
-            text-decoration: none;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .contact-link:hover {
-            color: #f1c40f;
-        }
-
-        footer {
-            background-color: #333;
-            color: #f4f4f4;
-            text-align: center;
-            padding: 1.2rem 0;
-            position: sticky;
-            bottom: 0;
-            width: 100%;
+        #upload-form label {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            background-color: #6b7280; /* gray-500 */
+            color: white;
             font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 0.375rem; /* rounded-md */
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
         }
 
-        /* Styles for project grid and card */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.2rem;
-            margin-top: 2.5rem;
+        #upload-form label:hover {
+            background-color: #4b5563; /* gray-700 */
+            border-color: #9ca3af; /* gray-400 */
         }
 
-        .project-card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
-            padding: 2rem;
-            text-align: left;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        #upload-form button[type="submit"] {
+            background-color: #2563eb; /* blue-500 */
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem; /* rounded-md */
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        #upload-form button[type="submit"]:hover {
+            background-color: #1e40af; /* blue-700 */
         }
 
-        .project-card h3 {
-            color: #34495e;
-            margin-bottom: 0.8rem;
-            font-size: 1.6rem;
-        }
-
-        .project-card p {
-            color: #666;
-            margin-bottom: 1.2rem;
-        }
-
-        .project-card a {
+        .file-name {
+            margin-left: 0.75rem; /* ml-3 */
+            font-size: 0.875rem; /* text-sm */
+            color: #6b7280; /* text-gray-500 */
+            overflow: hidden;          /* Ensure long names don't overflow */
+            text-overflow: ellipsis;    /* Add ellipsis for very long names */
+            white-space: nowrap;       /* Prevent wrapping */
+            max-width: 200px;         /* Limit the width of the display */
             display: inline-block;
-            background-color: #f1c40f;
-            color: #fff;
-            padding: 0.8rem 1.6rem;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: background-color 0.3s ease-in-out;
+        }
+        .song-item {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
 
-        .project-card a:hover {
-            background-color: #d4ac0d;
+        .song-item:hover {
+            transform: translateY(-0.25rem);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(15px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .song-title {
+            color: #1e40af; /* blue-700 */
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
         }
 
-        .profile-card {
-            animation: fadeIn 1s ease-out;
+        .song-artist-album {
+            color: #4b5563; /* gray-700 */
+            font-size: 0.875rem;
         }
 
-        .projects-section h2, .skills-section h2, .services-section h2, .Resume-section h2, .contact-section h2 {
-            animation: fadeIn 1.2s ease-out;
+        .song-duration {
+            color: #6b7280; /* gray-500 */
+            font-size: 0.75rem;
         }
 
-        .skills-list {
-            animation: fadeIn 1.4s ease-out;
-        }
-
-        .project-grid {
-            animation: fadeIn 1.6s ease-out;
-        }
     </style>
 </head>
-<body>
-    <div class="intro-overlay" id="introOverlay">
-        <div class="intro-content">
-            <img src="https://media-hosting.imagekit.io/069f2033d7a742a5/m2.jpg?Expires=1841737562&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=d78pRk4mMIyUzAJLpM5ALSPl1otRXEcKtZWYQ5hwWwdrSZzkoxqkRgXDyXxjICht8Zd8D9xjPmoABbTgmS2frVDiILA6v38kSgUiHgS5jpBb28YO9YxWC3SPEi8TYX-VULDm7CVvPMo-ESNRtEPloQf6CRyBH7r6btlBt-JSsh3QVVl-AD0hUKZg0DqeUsw2PUIr64Q97riri-DNYPezBfAqT6kxAFPRNWK-xzaEVCKvZqERjN2Y8TF8CpHWq62WWv9gtJrzukGpB0tM8SmKBQVwk9vmPfxRJj898ONuXdb1epB9bI1z5DbYd5Plq698KLux4mfSlIcmYhv2WMESDg__" alt="Your Profile Picture" class="intro-profile-picture">
-            <div class="typing-container">
-                <div class="intro-typing-animation" id="introSkillsText"></div>
-                <div class="typing-pen"></div>
-            </div>
+<body class="bg-gray-100">
+    <header class="bg-blue-500 text-white py-4 shadow-md">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl font-semibold text-center">Song Search & Download</h1>
         </div>
-    </div>
-
-    <header class="main-header">
-        <h1>ShaddieTech</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#resume">Résumé</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <main>
-        <section id="about" class="intro-section" data-bg-src="https://imagekit.io/tools/asset-public-link/?detail=%7B%22name%22%3A%22jpg.jpg%22%2C%22type%22%3A%22image%2Fjpeg%22%2C%22signedurl_expire%22%3A%222028-05-12T10%3A07%3A10.934Z%22%2C%22signedUrl%22%3A%22https%3A%2F%2Fmedia-hosting.imagekit.io%2Fb2a967b9b98b46d6%2Fjpg.jpg%3FExpires%3D1841738831%26Key-Pair-Id%3DK2ZIVPTIP2VGHC%26Signature%3DPuMCjXujwxWfcvXYI4WGIY3PWnELitqmEouNT1EQxlVEecRm3W37EvOPpYMGg4lfs4o81gcvhBtiylxovB-eojGTdLz4bOKupcsdruWAPW6DwMM2KlxQTrgbV1q1kdOTr5SGr5esTRBE2JYmvkP~NyP4iR~I-zkAX-zItKF4~ieHg7JdTLL0ZdmnHq6uHCuMufLO5OAoMcAOevTgzExMS8PWFP600DJkXSzC0TFLKownx0AFHngJ0GQUGFMtXmII08OSbH08Hp8r3QIQACsT3gVh~N6EX7GedJ7g8Ziq9nY-bPsutMqIivMYy9VVRKOHslNHJ5RF6zGTA05AOYwGhQ__%22%7D">
-            <div class="profile-card">
-                <img src="https://imagekit.io/tools/asset-public-link/?detail=%7B%22name%22%3A%22jpg.jpg%22%2C%22type%22%3A%22image%2Fjpeg%22%2C%22signedurl_expire%22%3A%222028-05-12T10%3A07%3A10.934Z%22%2C%22signedUrl%22%3A%22https%3A%2F%2Fmedia-hosting.imagekit.io%2Fb2a967b9b98b46d6%2Fjpg.jpg%3FExpires%3D1841738831%26Key-Pair-Id%3DK2ZIVPTIP2VGHC%26Signature%3DPuMCjXujwxWfcvXYI4WGIY3PWnELitqmEouNT1EQxlVEecRm3W37EvOPpYMGg4lfs4o81gcvhBtiylxovB-eojGTdLz4bOKupcsdruWAPW6DwMM2KlxQTrgbV1q1kdOTr5SGr5esTRBE2JYmvkP~NyP4iR~I-zkAX-zItKF4~ieHg7JdTLL0ZdmnHq6uHCuMufLO5OAoMcAOevTgzExMS8PWFP600DJkXSzC0TFLKownx0AFHngJ0GQUGFMtXmII08OSbH08Hp8r3QIQACsT3gVh~N6EX7GedJ7g8Ziq9nY-bPsutMqIivMYy9VVRKOHslNHJ5RF6zGTA05AOYwGhQ__%22%7D" alt="Shaddie - Ready to Build the Web!" class="profile-pic">
-                <h1 class="name-title">Hey, I'm Shaddie</h1>
-                <p class="elevator-pitch">A web developer with a knack for crafting digital experiences that are both functional and a joy to use. I believe in clean code and thoughtful design.</p>
-                <p>Hello, I'm Shadrack Kithua, a third-year Information Technology student at Kirinyaga University, and I genuinely get excited about the power of technology to make a real impact. My journey in IT has equipped me with a solid understanding of core areas like software development (I particularly enjoy working with Python and Java), database management (from crafting SQL queries to exploring NoSQL databases), and the essential principles of networking.</p>
-                <p>Beyond my coursework, I've been actively exploring cutting-edge fields such as cloud computing (I've been diving into AWS and Azure), developing a keen interest in cybersecurity, and discovering the insights hidden within data analysis using tools like Pandas and Matplotlib. For me, IT isn't just about lines of code or network diagrams; it's about creating solutions and constantly learning. My portfolio reflects this hands-on approach, showcasing projects where I've applied these skills to solve tangible problems. I'm eager to connect with fellow innovators and contribute my skills and genuine passion to meaningful IT projects.</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/shadrack-kithua-2811a7334?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="linkedin-link link with-icon">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/Kithuaa" target="_blank" class="github-link link with-icon">
-                        <i class="fab fa-github"></i>
-                    </a>
+    <main class="container mx-auto py-6 px-4">
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <form id="search-form" class="flex flex-col sm:flex-row gap-4 items-center">
+                <input
+                    type="text"
+                    id="search-query"
+                    placeholder="Enter song name..."
+                    class="flex-grow rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2"
+                />
+                <button type="submit" class="bg-green-500 hover:bg-green-600 text-white rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 transition-colors duration-300">
+                    Search
+                </button>
+            </form>
+            <div id="search-results" class="mt-6">
                 </div>
-                <p class="vision">My journey in tech is about more than just code; it's about building a better digital world, one project at a time.</p>
-            </div>
-        </section>
+        </div>
 
-        <section id="projects" class="projects-section">
-            <h2>My Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3><i class="fas fa-store"></i> E-commerce Store Concept</h3>
-                    <p>A conceptual online store built with HTML, CSS, and JavaScript, focusing on a clean and intuitive user interface.</p>
-                    <a href="https://www.youtube.com/watch?v=zOjov-2OZ0E&t=5011s&pp=ygUWY29tcHV0ZXIgcHJvZ3JhbW1pbmcgMQ%3D%3D" target="_blank">Explore the Design</a>
+        <div id="upload-section" class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-center">Upload Song/Video</h2>
+            <form id="upload-form" class="flex flex-col items-center gap-4">
+                <div class="relative w-full max-w-[300px]">
+                    <label for="file-input">Choose File</label>
+                    <input type="file" id="file-input" accept="audio/mpeg, video/mp4" class="w-full"/>
+                    <span class="file-name" id="file-name-display">No file chosen</span>
                 </div>
-                <div class="project-card">
-                    <h3><i class="fas fa-blog"></i> Personal Blog Website</h3>
-                    <p>A responsive blog platform developed to share thoughts and ideas, incorporating modern design principles.</p>
-                    <a href="https://youtu.be/qI1yCpa4UFE" target="_blank">Check out the Blog</a>
+                <button type="submit" class="w-full max-w-[300px]">Upload</button>
+            </form>
+            <div id="upload-feedback" class="mt-4 text-center">
                 </div>
-            </div>
-        </section>
+        </div>
 
-        <section id="skills" class="skills-section">
-            <h2>Technical Skills</h2>
-            <ul class="skills-list">
-                <li><i class="fab fa-html5"></i> <span class="skill-item">HTML5</span></li>
-                <li><i class="fab fa-css3-alt"></i> <span class="skill-item">CSS3</span></li>
-                <li><i class="fab fa-js"></i> <span class="skill-item">JavaScript (ES6+)</span></li>
-                <li><i class="fas fa-mobile-alt"></i> <span class="skill-item">Responsive Design</span></li>
-                <li><i class="fas fa-universal-access"></i> <span class="skill-item">Web Accessibility (WCAG)</span></li>
-                <li><i class="fas fa-puzzle-piece"></i> <span class="skill-item">Problem Solving</span></li>
-                <li><i class="fas fa-code"></i> <span class="skill-item">Programming Logic</span></li>
-            </ul>
-        </section>
-
-        <section id="services" class="services-section">
-            <h2>Services I Offer</h2>
-            <ul class="skills-list">
-                <li><i class="fas fa-laptop-code"></i> <span class="skill-item">Web Development</span></li>
-                <li><i class="fas fa-paint-brush"></i> <span class="skill-item">Web Design</span></li>
-                <li><i class="fas fa-mobile-alt"></i> <span class="skill-item">Responsive Design</span></li>
-                <li><i class="fas fa-code"></i> <span class="skill-item">Front-End Development</span></li>
-                <li><i class="fas fa-database"></i> <span class="skill-item">Database Management</span></li>
-            </ul>
-        </section>
-
-        <section id="resume" class="Resume-section">
-            <h2>Résumé</h2>
-            <p>Want to see the full story? Take a look at my detailed résumé <a href="https://1drv.ms/w/c/79334c6347a2a257/EfuopDBNW1lNla5gIkzbSwIBDqSYjLP-NrON9sGNF9PKBg?e=RGg4ML" target="_blank" class="resume-link">right here (PDF)</a>.</p>
-        </section>
-
-        <section id="contact" class="contact-section">
-            <h2>Let's Connect!</h2>
-            <p>WhatsApp: <a href="https://wa.me/254705961358" class="contact-link">0705961358</a></p>
-            <p>Message: <a href="sms:0705961358" class="contact-link">0705961358</a></p>
-            <p>Facebook: <a href="https://www.facebook.com/shad.kithua" class="contact-link">Shad Kithua</a></p>
-            <p>Or give me a call: <a href="tel:+254705961358" class="contact-link">0705961358</a></p>
-        </section>
+        <div id="download-area" class="bg-white rounded-lg shadow-md p-6 mb-8 hidden">
+            <h2 class="text-2xl font-semibold mb-4 text-center">Download Song</h2>
+            <div id="song-info" class="mb-4 p-4 bg-gray-50 rounded-md border border-gray-200">
+                </div>
+            <div id="download-links" class="flex flex-col gap-3">
+                </div>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2025 ShaddieTech. Crafted with passion.</p>
+    <footer class="bg-gray-800 text-white py-4 mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Song Search & Download | Owned by Shadtech. All rights reserved.</p>
+        </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const skillsElement = document.getElementById('introSkillsText');
-            const skills = ["Web Designer", "Programming", "And More"];
-            let skillIndex = 0;
-            let charIndex = 0;
+    const searchForm = document.getElementById('search-form');
+    const searchInput = document.getElementById('search-query');
+    const searchResultsContainer = document.getElementById('search-results');
+    const downloadArea = document.getElementById('download-area');
+    const songInfoContainer = document.getElementById('song-info');
+    const downloadLinksContainer = document.getElementById('download-links');
+    const uploadForm = document.getElementById('upload-form');
+    const fileInput = document.getElementById('file-input');
+    const fileNameDisplay = document.getElementById('file-name-display');
+    const uploadFeedback = document.getElementById('upload-feedback');
 
-            function type() {
-                if (skillIndex < skills.length) {
-                    if (charIndex < skills[skillIndex].length) {
-                        skillsElement.textContent += skills[skillIndex].charAt(charIndex);
-                        charIndex++;
-                        setTimeout(type, 100);
-                    } else {
-                        setTimeout(erase, 1500);
-                    }
-                } else {
-                    skillIndex = 0;
-                    setTimeout(type, 500);
+    // Mock API data (replace with actual API calls)
+    const mockSongs = [
+        {
+            id: '1',
+            title: 'Song 1',
+            artist: 'Artist A',
+            album: 'Album X',
+            duration: '3:45',
+            formats: [
+                { format: 'mp3', quality: '320kbps', url: '#' },
+                { format: 'mp3', quality: '128kbps', url: '#' },
+                { format: 'flac', quality: 'Lossless', url: '#' },
+            ],
+            file: { name: 'song1.mp3', type: 'audio/mpeg' }, // Mock file info
+        },
+        {
+            id: '2',
+            title: 'Song 2',
+            artist: 'Artist B',
+            album: 'Album Y',
+            duration: '4:20',
+            formats: [
+                { format: 'mp3', quality: '320kbps', url: '#' },
+                { format: 'ogg', quality: '160kbps', url: '#' },
+            ],
+            file: { name: 'song2.ogg', type: 'audio/ogg' },
+        },
+        {
+            id: '3',
+            title: 'Song 3',
+            artist: 'Artist C',
+            album: 'Album Z',
+            duration: '2:58',
+            formats: [
+                { format: 'mp3', quality: '256kbps', url: '#' },
+                { format: 'aac', quality: '192kbps', url: '#' },
+            ],
+            file: { name: 'song3.mp4', type: 'video/mp4' },
+        },
+        {
+            id: '4',
+            title: 'Song 4',
+            artist: 'Artist A',
+            album: 'Album X',
+            duration: '5:01',
+            formats: [
+                { format: 'mp3', quality: '320kbps', url: '#' },
+                { format: 'flac', quality: 'Lossless', url: '#' },
+            ],
+            file: { name: 'song4.flac', type: 'audio/flac' },
+        },
+        {
+            id: '5',
+            title: 'Song 5',
+            artist: 'Artist D',
+            album: 'Album W',
+            duration: '3:12',
+            formats: [
+                { format: 'mp3', quality: '128kbps', url: '#' },
+            ],
+            file: { name: 'song5.mp3', type: 'audio/mpeg' },
+        }
+    ];
+
+    searchForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const query = searchInput.value.toLowerCase();
+        searchResultsContainer.innerHTML = '<p class="text-gray-500">Loading...</p>';
+
+        // Simulate API call delay
+        setTimeout(() => {
+            const results = mockSongs.filter((song) =>
+                song.title.toLowerCase().includes(query) || song.artist.toLowerCase().includes(query)
+            );
+
+            searchResultsContainer.innerHTML = ''; // Clear previous results
+            if (results.length === 0) {
+                searchResultsContainer.innerHTML = '<p class="text-red-500">No songs found.</p>';
+            } else {
+                const resultsHTML = results.map(
+                    (song) => `
+                        <div class="song-item">
+                            <div>
+                                <h3 class="song-title">${song.title}</h3>
+                                <p class="song-artist-album">Artist: ${song.artist}, Album: ${song.album}</p>
+                                <p class="song-duration">Duration: ${song.duration}</p>
+                            </div>
+                            <button class="bg-indigo-500 hover:bg-indigo-600 text-white rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 transition-colors duration-300" onclick="showDownloadPage('${song.id}')">
+                                <i class="fas fa-download mr-2"></i> Download
+                            </button>
+                        </div>
+                    `
+                ).join('');
+                searchResultsContainer.innerHTML = resultsHTML;
+            }
+        }, 500); // Simulate 500ms delay
+    });
+
+    function showDownloadPage(songId) {
+        const song = mockSongs.find((s) => s.id === songId);
+
+        if (!song) {
+            alert('Song not found!'); // Basic error handling
+            return;
+        }
+
+        downloadArea.classList.remove('hidden');
+        songInfoContainer.innerHTML = `
+            <h3 class="text-xl font-semibold text-blue-700">${song.title}</h3>
+            <p class="text-gray-700">Artist: ${song.artist}, Album: ${song.album}</p>
+            <p class="text-sm text-gray-500">Duration: ${song.duration}</p>
+            <div class="mt-4">
+                <p class="text-gray-600 font-medium">Play:</p>
+                ${song.file.type.startsWith('audio/')
+                    ? `<audio controls class="w-full rounded-md">
+                        <source src="${URL.createObjectURL(new Blob([song.file]))}" type="${song.file.type}">
+                            Your browser does not support the audio element.
+                        </audio>`
+                    : `<video controls class="w-full rounded-md">
+                        <source src="${URL.createObjectURL(new Blob([song.file]))}" type="${song.file.type}">
+                            Your browser does not support the video element.
+                        </video>`
                 }
-            }
+            </div>
+        `;
 
-            function erase() {
-                if (charIndex > 0) {
-                    skillsElement.textContent = skillsElement.textContent.substring(0, charIndex - 1);
-                    charIndex--;
-                    setTimeout(erase, 55);
-                } else {
-                    skillIndex++;
-                    setTimeout(type, 505);
-                }
-            }
+        downloadLinksContainer.innerHTML = song.formats
+            .map(
+                (format) => `
+                    <a href="${format.url}" class="bg-purple-500 hover:bg-purple-600 text-white rounded-md py-2 px-4 text-center focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 transition-colors duration-300">
+                        Download ${format.format.toUpperCase()} - ${format.quality}
+                    </a>
+                `
+            )
+            .join('');
+    }
 
-            type();
+    fileInput.addEventListener('change', (event) => {
+        if (event.target.files.length > 0) {
+            fileNameDisplay.textContent = event.target.files[0].name;
+        } else {
+            fileNameDisplay.textContent = 'No file chosen';
+        }
+    });
 
-            // Get the intro section element
-            const introSection = document.getElementById('about');
-            const bgSrc = introSection.getAttribute('data-bg-src');
+    uploadForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!fileInput.files || fileInput.files.length === 0) {
+            uploadFeedback.textContent = 'Please select a file to upload.';
+            uploadFeedback.className = 'text-red-500';
+            return;
+        }
 
-            if (bgSrc) {
-                introSection.style.backgroundImage = `url('${bgSrc}')`;
-            }
+        const file = fileInput.files[0];
+        const validAudioTypes = ['audio/mpeg', 'audio/mp3', 'audio/ogg', 'audio/flac'];
+        const validVideoTypes = ['video/mp4'];
 
-            setTimeout(() => {
-                const introOverlay = document.getElementById('introOverlay');
-                introOverlay.style.opacity = '0';
-                setTimeout(() => {
-                    introOverlay.style.display = 'none';
-                }, 1000);
-            }, 5000);
-        });
+        if (!validAudioTypes.includes(file.type) && !validVideoTypes.includes(file.type)) {
+            uploadFeedback.textContent = 'Invalid file type. Please upload an MP3, MP4, OGG, or FLAC file.';
+            uploadFeedback.className = 'text-red-500';
+            return;
+        }
+
+        // In a real application, you would send the file to a server here.
+        // This is just a simulation.
+        uploadFeedback.textContent = `Uploading ${file.name}...`;
+        uploadFeedback.className = 'text-gray-500';
+
+        setTimeout(() => {
+            // Simulate a successful upload
+            const newSong = {
+                id: String(Date.now()), // Generate a unique ID
+                title: file.name.split('.').slice(0, -1).join('.'), // Remove extension for title
+                artist: 'Unknown Artist', // You'd likely get this from metadata or user input
+                album: 'Unknown Album',
+                duration: 'Unknown', // You'd need a library to get this from the file
+                formats: [{ format: file.type.split('/')[1], quality: 'Unknown', url: '#' }], //basic format
+                file: file,
+            };
+            mockSongs.push(newSong); // Add to our mock song list
+            uploadFeedback.textContent = `${file.name} uploaded successfully!`;
+            uploadFeedback.className = 'text-green-500';
+            fileInput.value = ''; // Clear the input
+            fileNameDisplay.textContent = 'No file chosen';
+             // Clear the form
+        }, 2000); // Simulate a 2-second upload process
+    });
     </script>
 </body>
 </html>
+
