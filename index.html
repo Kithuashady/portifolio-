@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShaddieTech - Web Developer Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://imagekit.io/tools/asset-public-link/?detail=%7B%22name%22%3A%22m2.jpg%22%2C%22type%22%3A%22image%2Fjpeg%22%2C%22signedurl_expire%22%3A%222028-05-12T09%3A46%3A02.016Z%22%2C%22signedUrl%22%3A%22https%3A%2F%2Fmedia-hosting.imagekit.io%2F069f2033d7a742a5%2Fm2.jpg%3FExpires%3D1841737562%26Key-Pair-Id%3DK2ZIVPTIP2VGHC%26Signature%3Dd78pRk4mMIyUzAJLpM5ALSPl1otRXEcKtZWYQ5hwWwdrSZzkoxqkRgXDyXxjICht8Zd8D9xjPmoABbTgmS2frVDiILA6v38kSgUiHgS5jpBb28YO9YxWC3SPEi8TYX-VULDm7CVvPMo-ESNRtEPloQf6CRyBH7r6btlBt-JSsh3QVVl-AD0hUKZg0DqeUsw2PUIr64Q97riri-DNYPezBfAqT6kxAFPRNWK-xzaEVCKvZqERjN2Y8TF8CpHWq62WWv9gtJrzukGpB0tM8SmKBQVwk9vmPfxRJj898ONuXdb1epB9bI1z5DbYd5Plq698KLux4mfSlIcmYhv2WMESDg__%22%7D"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         /* Integrated styles for the intro section */
         .intro-overlay {
-            background-color: #f0f4c3; /* Soft background for the initial view */
+            background-color: #f0f4c3;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; /* Cover the initial viewport */
-            position: fixed; /* Stay on top initially */
+            min-height: 100vh;
+            position: fixed;
             width: 100%;
-            z-index: 1000; /* Ensure it's above other content */
+            z-index: 1000;
             opacity: 1;
             transition: opacity 1s ease-out;
         }
@@ -36,13 +36,13 @@
         }
 
         .intro-profile-picture {
-            width: 150px; /* Enlarge the profile picture */
-            height: 150px; /* Enlarge the profile picture */
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid #aed581;
             margin-bottom: 1.5rem;
-            animation: pulse 2s infinite alternate; /* Simple pulse animation */
+            animation: pulse 2s infinite alternate;
         }
 
         @keyframes pulse {
@@ -51,7 +51,7 @@
         }
 
         .typing-container {
-            position: relative; /* For positioning the pen */
+            position: relative;
             margin-top: 1rem;
         }
 
@@ -62,7 +62,7 @@
             overflow: hidden;
             white-space: nowrap;
             margin: 0;
-            padding-right: 15px; /* Space for the cursor */
+            padding-right: 15px;
         }
 
         .typing-cursor {
@@ -79,12 +79,11 @@
 
         .typing-pen {
             position: absolute;
-            right: -20px; /* Adjust position as needed */
+            right: -20px;
             top: 50%;
             transform: translateY(-50%);
-            width: 20px; /* Adjust size */
+            width: 20px;
             height: 20px;
-            /* You can use a simple shape or a more detailed SVG here */
             background-color: #f1c40f;
             border-radius: 5px;
         }
@@ -96,10 +95,10 @@
             left: 5px;
             border-left: 5px solid transparent;
             border-right: 5px solid transparent;
-            border-bottom: 5px solid #333; /* Pen tip */
+            border-bottom: 5px solid #333;
         }
 
-        /* Your existing styles - ensure no conflicts with the above */
+        /* Your existing styles */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -120,7 +119,7 @@
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
             position: sticky;
             top: 0;
-            z-index: 999; /* Ensure header is below the overlay initially */
+            z-index: 999;
         }
 
         .main-header h1 {
@@ -153,7 +152,7 @@
 
         main {
             padding: 2.5rem;
-            margin-top: 100vh; /* Push main content below the initial view */
+            margin-top: 100vh;
         }
 
         section {
@@ -179,7 +178,6 @@
             align-items: center;
             text-align: center;
             padding: 5rem 2rem;
-            background: url(http://googleusercontent.com/image_generation_content/1); /* Add background image */
             background-size: cover;
             background-position: center;
             border-radius: 12px;
@@ -259,10 +257,9 @@
 
         .projects-section h2,
         .skills-section h2,
-        .services-section h2, /* New Services Section Heading */
+        .services-section h2,
         .Resume-section h2,
         .contact-section h2 {
-            /* Already centered */
         }
 
         .skills-list {
@@ -419,7 +416,7 @@
 <body>
     <div class="intro-overlay" id="introOverlay">
         <div class="intro-content">
-            <img src="m2.jpg" alt="Your Profile Picture" class="intro-profile-picture">
+            <img src="https://media-hosting.imagekit.io/069f2033d7a742a5/m2.jpg?Expires=1841737562&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=d78pRk4mMIyUzAJLpM5ALSPl1otRXEcKtZWYQ5hwWwdrSZzkoxqkRgXDyXxjICht8Zd8D9xjPmoABbTgmS2frVDiILA6v38kSgUiHgS5jpBb28YO9YxWC3SPEi8TYX-VULDm7CVvPMo-ESNRtEPloQf6CRyBH7r6btlBt-JSsh3QVVl-AD0hUKZg0DqeUsw2PUIr64Q97riri-DNYPezBfAqT6kxAFPRNWK-xzaEVCKvZqERjN2Y8TF8CpHWq62WWv9gtJrzukGpB0tM8SmKBQVwk9vmPfxRJj898ONuXdb1epB9bI1z5DbYd5Plq698KLux4mfSlIcmYhv2WMESDg__" alt="Your Profile Picture" class="intro-profile-picture">
             <div class="typing-container">
                 <div class="intro-typing-animation" id="introSkillsText"></div>
                 <div class="typing-pen"></div>
@@ -442,13 +439,13 @@
     </header>
 
     <main>
-        <section id="about" class="intro-section">
+        <section id="about" class="intro-section" data-bg-src="https://imagekit.io/tools/asset-public-link/?detail=%7B%22name%22%3A%22jpg.jpg%22%2C%22type%22%3A%22image%2Fjpeg%22%2C%22signedurl_expire%22%3A%222028-05-12T10%3A07%3A10.934Z%22%2C%22signedUrl%22%3A%22https%3A%2F%2Fmedia-hosting.imagekit.io%2Fb2a967b9b98b46d6%2Fjpg.jpg%3FExpires%3D1841738831%26Key-Pair-Id%3DK2ZIVPTIP2VGHC%26Signature%3DPuMCjXujwxWfcvXYI4WGIY3PWnELitqmEouNT1EQxlVEecRm3W37EvOPpYMGg4lfs4o81gcvhBtiylxovB-eojGTdLz4bOKupcsdruWAPW6DwMM2KlxQTrgbV1q1kdOTr5SGr5esTRBE2JYmvkP~NyP4iR~I-zkAX-zItKF4~ieHg7JdTLL0ZdmnHq6uHCuMufLO5OAoMcAOevTgzExMS8PWFP600DJkXSzC0TFLKownx0AFHngJ0GQUGFMtXmII08OSbH08Hp8r3QIQACsT3gVh~N6EX7GedJ7g8Ziq9nY-bPsutMqIivMYy9VVRKOHslNHJ5RF6zGTA05AOYwGhQ__%22%7D">
             <div class="profile-card">
-                <img src="m2.jpg" alt="Shaddie - Ready to Build the Web!" class="profile-pic">
+                <img src="https://imagekit.io/tools/asset-public-link/?detail=%7B%22name%22%3A%22jpg.jpg%22%2C%22type%22%3A%22image%2Fjpeg%22%2C%22signedurl_expire%22%3A%222028-05-12T10%3A07%3A10.934Z%22%2C%22signedUrl%22%3A%22https%3A%2F%2Fmedia-hosting.imagekit.io%2Fb2a967b9b98b46d6%2Fjpg.jpg%3FExpires%3D1841738831%26Key-Pair-Id%3DK2ZIVPTIP2VGHC%26Signature%3DPuMCjXujwxWfcvXYI4WGIY3PWnELitqmEouNT1EQxlVEecRm3W37EvOPpYMGg4lfs4o81gcvhBtiylxovB-eojGTdLz4bOKupcsdruWAPW6DwMM2KlxQTrgbV1q1kdOTr5SGr5esTRBE2JYmvkP~NyP4iR~I-zkAX-zItKF4~ieHg7JdTLL0ZdmnHq6uHCuMufLO5OAoMcAOevTgzExMS8PWFP600DJkXSzC0TFLKownx0AFHngJ0GQUGFMtXmII08OSbH08Hp8r3QIQACsT3gVh~N6EX7GedJ7g8Ziq9nY-bPsutMqIivMYy9VVRKOHslNHJ5RF6zGTA05AOYwGhQ__%22%7D" alt="Shaddie - Ready to Build the Web!" class="profile-pic">
                 <h1 class="name-title">Hey, I'm Shaddie</h1>
                 <p class="elevator-pitch">A web developer with a knack for crafting digital experiences that are both functional and a joy to use. I believe in clean code and thoughtful design.</p>
-                <p>Hello, I'm Shadrack Kithua, a third-year Information Technology student at Kirinyaga University, and I genuinely get excited about the power of technology to make a real impact. My journey in IT has equipped me with a solid understanding of core areas like software development (I particularly enjoy working with Python and Java), database management (from crafting SQL queries to exploring NoSQL databases), and the essential principles of networking.
-        Beyond my coursework, I've been actively exploring cutting-edge fields such as cloud computing (I've been diving into AWS and Azure), developing a keen interest in cybersecurity, and discovering the insights hidden within data analysis using tools like Pandas and Matplotlib. For me, IT isn't just about lines of code or network diagrams; it's about creating solutions and constantly learning. My portfolio reflects this hands-on approach, showcasing projects where I've applied these skills to solve tangible problems. I'm eager to connect with fellow innovators and contribute my skills and genuine passion to meaningful IT projects.</p>
+                <p>Hello, I'm Shadrack Kithua, a third-year Information Technology student at Kirinyaga University, and I genuinely get excited about the power of technology to make a real impact. My journey in IT has equipped me with a solid understanding of core areas like software development (I particularly enjoy working with Python and Java), database management (from crafting SQL queries to exploring NoSQL databases), and the essential principles of networking.</p>
+                <p>Beyond my coursework, I've been actively exploring cutting-edge fields such as cloud computing (I've been diving into AWS and Azure), developing a keen interest in cybersecurity, and discovering the insights hidden within data analysis using tools like Pandas and Matplotlib. For me, IT isn't just about lines of code or network diagrams; it's about creating solutions and constantly learning. My portfolio reflects this hands-on approach, showcasing projects where I've applied these skills to solve tangible problems. I'm eager to connect with fellow innovators and contribute my skills and genuine passion to meaningful IT projects.</p>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/shadrack-kithua-2811a7334?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="linkedin-link link with-icon">
                         <i class="fab fa-linkedin"></i>
@@ -467,12 +464,12 @@
                 <div class="project-card">
                     <h3><i class="fas fa-store"></i> E-commerce Store Concept</h3>
                     <p>A conceptual online store built with HTML, CSS, and JavaScript, focusing on a clean and intuitive user interface.</p>
-                    <a href="#" target="_blank">Explore the Design</a>
+                    <a href="https://www.youtube.com/watch?v=zOjov-2OZ0E&t=5011s&pp=ygUWY29tcHV0ZXIgcHJvZ3JhbW1pbmcgMQ%3D%3D" target="_blank">Explore the Design</a>
                 </div>
                 <div class="project-card">
                     <h3><i class="fas fa-blog"></i> Personal Blog Website</h3>
                     <p>A responsive blog platform developed to share thoughts and ideas, incorporating modern design principles.</p>
-                    <a href="#" target="_blank">Check out the Blog</a>
+                    <a href="https://youtu.be/qI1yCpa4UFE" target="_blank">Check out the Blog</a>
                 </div>
             </div>
         </section>
@@ -486,29 +483,29 @@
                 <li><i class="fas fa-mobile-alt"></i> <span class="skill-item">Responsive Design</span></li>
                 <li><i class="fas fa-universal-access"></i> <span class="skill-item">Web Accessibility (WCAG)</span></li>
                 <li><i class="fas fa-puzzle-piece"></i> <span class="skill-item">Problem Solving</span></li>
-                 <li><i class="fas fa-code"></i> <span class="skill-item">Programming Logic</span></li>
+                <li><i class="fas fa-code"></i> <span class="skill-item">Programming Logic</span></li>
             </ul>
         </section>
 
-         <section id="services" class="services-section">
+        <section id="services" class="services-section">
             <h2>Services I Offer</h2>
             <ul class="skills-list">
                 <li><i class="fas fa-laptop-code"></i> <span class="skill-item">Web Development</span></li>
                 <li><i class="fas fa-paint-brush"></i> <span class="skill-item">Web Design</span></li>
                 <li><i class="fas fa-mobile-alt"></i> <span class="skill-item">Responsive Design</span></li>
                 <li><i class="fas fa-code"></i> <span class="skill-item">Front-End Development</span></li>
-                 <li><i class="fas fa-database"></i> <span class="skill-item">Database Management</span></li>
+                <li><i class="fas fa-database"></i> <span class="skill-item">Database Management</span></li>
             </ul>
         </section>
 
         <section id="resume" class="Resume-section">
             <h2>Résumé</h2>
-            <p>Want to see the full story? Take a look at my detailed résumé <a href="path/to/your/resume.pdf" target="_blank" class="resume-link">right here (PDF)</a>.</p>
+            <p>Want to see the full story? Take a look at my detailed résumé <a href="https://1drv.ms/w/c/79334c6347a2a257/EfuopDBNW1lNla5gIkzbSwIBDqSYjLP-NrON9sGNF9PKBg?e=RGg4ML" target="_blank" class="resume-link">right here (PDF)</a>.</p>
         </section>
 
         <section id="contact" class="contact-section">
             <h2>Let's Connect!</h2>
-             <p>WhatsApp: <a href="https://wa.me/254705961358" class="contact-link">0705961358</a></p>
+            <p>WhatsApp: <a href="https://wa.me/254705961358" class="contact-link">0705961358</a></p>
             <p>Message: <a href="sms:0705961358" class="contact-link">0705961358</a></p>
             <p>Facebook: <a href="https://www.facebook.com/shad.kithua" class="contact-link">Shad Kithua</a></p>
             <p>Or give me a call: <a href="tel:+254705961358" class="contact-link">0705961358</a></p>
@@ -518,11 +515,11 @@
     <footer>
         <p>&copy; 2025 ShaddieTech. Crafted with passion.</p>
     </footer>
-    <script src="script.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const skillsElement = document.getElementById('introSkillsText');
-            const skills = ["Web Designer", "Programming", "And More"]; // Updated skills
+            const skills = ["Web Designer", "Programming", "And More"];
             let skillIndex = 0;
             let charIndex = 0;
 
@@ -531,12 +528,12 @@
                     if (charIndex < skills[skillIndex].length) {
                         skillsElement.textContent += skills[skillIndex].charAt(charIndex);
                         charIndex++;
-                        setTimeout(type, 100); // Adjust typing speed (milliseconds)
+                        setTimeout(type, 100);
                     } else {
-                        setTimeout(erase, 1500); // Pause before erasing
+                        setTimeout(erase, 1500);
                     }
                 } else {
-                    skillIndex = 0; // Loop through skills again
+                    skillIndex = 0;
                     setTimeout(type, 500);
                 }
             }
@@ -545,23 +542,30 @@
                 if (charIndex > 0) {
                     skillsElement.textContent = skillsElement.textContent.substring(0, charIndex - 1);
                     charIndex--;
-                    setTimeout(erase, 55); // Adjust erasing speed
+                    setTimeout(erase, 55);
                 } else {
                     skillIndex++;
                     setTimeout(type, 505);
                 }
             }
 
-            type(); // Start the typing animation
+            type();
 
-            // Fade out the intro overlay after the animation
+            // Get the intro section element
+            const introSection = document.getElementById('about');
+            const bgSrc = introSection.getAttribute('data-bg-src');
+
+            if (bgSrc) {
+                introSection.style.backgroundImage = `url('${bgSrc}')`;
+            }
+
             setTimeout(() => {
                 const introOverlay = document.getElementById('introOverlay');
                 introOverlay.style.opacity = '0';
                 setTimeout(() => {
                     introOverlay.style.display = 'none';
-                }, 1000); // Match the transition time
-            }, 5000); // Adjust this time to match the length of your animation
+                }, 1000);
+            }, 5000);
         });
     </script>
 </body>
